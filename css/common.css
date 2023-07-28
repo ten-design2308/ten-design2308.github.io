@@ -199,6 +199,9 @@ header {
 }
 
 /* フッター */
+.footer_img {
+    vertical-align: top;
+}
 .footer_wrap {
     padding: 4%;
 }
