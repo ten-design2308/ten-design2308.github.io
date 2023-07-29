@@ -1,41 +1,31 @@
 @charset "UTF-8";
-
-.about_back01 {
+/* 背景全体 */
+.about_backfull {
     position: absolute;
-    top: 0;
-    left: 20%;
-    max-width: 900px;
-}
-.about_back01 img {
-    object-fit: cover;
     width: 100%;
-    height: 250px;
-    object-position: 0 100%;
-}
-
-/* .home_back02 {
-    position: absolute;
-    top: -290px;
+    top: 0;
     left: 0;
+    margin: 0 auto;
+    z-index: -10;
 }
-.home_back02 img {
-    object-fit: cover;
+.about_backfull img {
+    object-fit: contain;
     width: 100%;
-    height: 610px;
-} */
-.back_design {
-    position: relative;
+    height: 900px;
 }
+@media screen and (max-width: 1500px) {
+    .about_backfull img {
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .about_backfull {
+        display: none;
+    }
+}
+.about_back01,
 .about_back02 {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    z-index: -1;
-}
-.about_back02 img {
-    object-fit: cover;
-    width: 100%;
-    height: 750px;
+    display: none;
 }
 
 h2 {
@@ -45,7 +35,7 @@ h2 {
 }
 .heading {
     position: absolute;
-    top: -70px;
+    top: 180px;
     left: 6%;
     z-index: -1;
 }
@@ -93,6 +83,40 @@ h2 {
 }
 
 /* レスポンシブ */
+@media screen and (max-width: 1366px) {
+    .heading {
+        top: -120px;
+    }
+    .about_back01 {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 18%;
+        max-width: 900px;
+    }
+    .about_back01 img {
+        object-fit: cover;
+        width: 100%;
+        height: 250px;
+        object-position: 0 100%;
+    }
+
+    .back_design {
+        position: relative;
+    }
+    .about_back02 {
+        display: block;
+        position: absolute;
+        top: -59px;
+        left: 0;
+        z-index: -1;
+    }
+    .about_back02 img {
+        object-fit: cover;
+        width: 100%;
+        height: 750px;
+    }
+}
 @media screen and (max-width: 767px) {
     h2 {
         font-size: 25px;
@@ -102,6 +126,9 @@ h2 {
     }
     .about_achieve {
         font-size: 13px;
+    }
+    .about_back02 {
+        top: 80px;
     }
     .about_skill_icon {
         width: 50%;
@@ -116,7 +143,7 @@ h2 {
         left: -50px;
     }
     .about_back02 {
-        top: 400px;
+        top: 310px;
     }
     .heading {
         position: static;

@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+/* .thought_back_wrap {
+    position: relative;
+} */
+.thought_back01 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 85px auto 0;
+    z-index: -10;
+}
+.thought_back01 img {
+    object-fit: contain;
+    width: 100%;
+    height: 2300px;
+}
+@media screen and (max-width: 1500px) {
+    .thought_back01 img {
+        object-fit: cover;
+    }
+}
+
 /* かたまり共通 */
 .section {
     position: relative;
@@ -19,6 +41,7 @@ h3 {
     border-bottom: 2px dotted #a2d7dd;
     margin-bottom: 17px;
 }
+
 .heading {
     position: absolute;
     top: 0;
@@ -28,7 +51,8 @@ h3 {
 }
 .pc_sticky {
     position: sticky;
-    top: 140px;
+    top: 110px;
+    padding-top: 30px;
 }
 .sp_un_sticky {
     display: none;
@@ -46,6 +70,7 @@ h3 {
     line-height: 2;
     letter-spacing: 0.1em;
 } */
+
 .thought_wrap {
     text-align: justify;
     max-width: 1000px;
@@ -54,15 +79,30 @@ h3 {
 }
 .thought_right {
     text-align: justify;
-    width: 57%;
-    margin-left: 43%;
+    width: 59%;
+    margin-left: 41%;
 }
 .thought_left {
     width: 55%;
 }
+.thought_right,
+.thought_left {
+    position: relative;
+}
 .thought_right + .thought_left,
 .thought_left + .thought_right {
-    margin-top: 150px;
+    margin-top: 100px;
+}
+.thought_before::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(162, 215, 221, 0.8);
+    position: absolute;
+    top: -10px;
+    left: -40px;
+    z-index: -5;
 }
 .thought_work {
     font-size: 15px;
@@ -74,8 +114,13 @@ h3 {
 
 /* ロゴマーク */
 
+.thought_back02 {
+    background-image: url(../images/thought_back02@2x-80.jpg);
+    z-index: -10;
+}
+
 .logo_wrap {
-    max-width: 730px;
+    max-width: 820px;
     padding-left: 20%;
     padding-right: 20%;
     margin: 300px auto 160px;
@@ -83,16 +128,17 @@ h3 {
 .logo_img {
     width: 240px;
     padding-top: 80px;
-    margin: 0 auto 100px;
+    margin: 0 auto 50px;
 }
 .logo_desc_mean {
-    margin-bottom: 160px;
+    margin-bottom: 100px;
 }
 .logo_desc_symbol {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 50px;
 }
-.logo_desc_symbol_desc {
+.logo_desc_symbol_wrap {
     padding-right: 30px;
 }
 .logo_desc_symbol_img {
@@ -144,6 +190,11 @@ h3 {
     .thought_left + .thought_right {
         margin-top: 0;
     }
+    .thought_before::before {
+        width: 80px;
+        height: 80px;
+        top: 40px;
+    }
     .thought_work {
         margin-bottom: 0;
     }
@@ -164,7 +215,7 @@ h3 {
     .logo_desc_symbol {
         display: block;
     }
-    .logo_desc_symbol_desc {
+    .logo_desc_symbol_wrap {
         padding-right: 0;
     }
     .logo_desc_symbol_img {
@@ -202,5 +253,11 @@ h3 {
     .logo_wrap {
         padding-left: 10%;
         padding-right: 10%;
+    }
+    .thought_before::before {
+        width: 60px;
+        height: 60px;
+        top: 35px;
+        left: -30px;
     }
 }
