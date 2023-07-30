@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ten.｜点１つまで想いのつまったものを。</title>
+    <title>ten.｜点１つまで想いのつまったものを</title>
     <meta name="description" content="ten.のポートフォリオサイト｜トップページです。">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png">
     <!-- slikのcss -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css"
@@ -22,6 +26,29 @@
 </head>
 
 <body>
+    <!-- ローディング -->
+    <div id="splash">
+        <div id="loading_logo">
+            <svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176.92 139.46">
+                <defs>
+                    <style>
+                        .loading_ten_logo {
+                            fill: none;
+                            stroke: #fffff5;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                            stroke-width: 7px;
+                        }
+                    </style>
+                </defs>
+                <g id="_レイヤー_2-2" data-name="レイヤー 2">
+                    <path id="rect1" class="loading_ten_logo"
+                        d="m3.5,78.11C12.84,55.86,45.77-1.1,76.03,3.8s25.14,86.88,20.24,103.79-12.9,28.58-21.8,28.37c-8.18-.19-9.84-11.89,2.69-31.16C97.86,73,168.58,17.39,173.42,3.55" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
     <!-- ヘッダー -->
     <header>
         <h1 class="header_logo">
@@ -60,7 +87,8 @@
     <div class="home_back01">
         <img src="images/home_back01@2x.png" alt="点線の背景01">
     </div>
-    <p class="vertical top">小さな「点」が増え、繋がっていく</p>
+    <div class="design01"></div>
+    <p class="vertical top keyframe1 animation">小さな「点」が増え、繋がっていく</p>
 
     <section class="home_thought">
         <div class="home_back02">
@@ -259,6 +287,14 @@
 
     <script src="js/script.js"></script>
     <script>
+        // ローディング
+        //logoの表示
+        $(window).on('load', function () {
+            $("#splash").delay(6800).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
+            $("#loading_logo").delay(6500).fadeOut('slow');//ロゴを1.2秒（1200ms）待機してからフェードアウト
+        });
+
+        // スライド
         $('.slider').slick({
             // 今どこにいるよって見える点（ドット）
             dots: true,
