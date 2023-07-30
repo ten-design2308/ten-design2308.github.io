@@ -242,6 +242,7 @@ h3 {
     }
     .sp_un_sticky {
         display: block;
+        padding-top: 20px;
         margin: 0 auto;
     }
     h3 {

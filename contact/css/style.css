@@ -6,14 +6,15 @@
     top: 0;
     left: 0;
     margin: 0 auto;
-    z-index: -10;
+    z-index: -1;
 }
 .contact_back01 img {
+    opacity: 0.6;
     object-fit: contain;
     width: 100%;
-    height: 1450px;
+    height: 1470px;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1505px) {
     .contact_back01 img {
         object-fit: cover;
     }
@@ -55,14 +56,28 @@ h2 {
 }
 .contact_p::before {
     content: "";
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(162, 215, 221, 0.8);
     position: absolute;
-    top: 30px;
-    left: -40px;
-    z-index: -1;
+    top: -10px;
+    left: -140px;
+    z-index: -10;
+    /* アニメーション */
+    animation: anim_v 3s infinite ease-in-out alternate;
+}
+@keyframes anim_v {
+    0% {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: rgba(22, 94, 131, 0.5);
+        transform: translate(0, 0px);
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: rgba(22, 94, 131, 0.5);
+        transform: translate(0, 8px);
+    }
 }
 .br_pc_none {
     display: none;
@@ -141,22 +156,24 @@ textarea:focus {
     background: #e3f3f5;
     border: solid 1px #d0ebee;
     margin: 0 auto 100px;
-    color: #3c3c3c;
     font-family: "Zen Maru Gothic", sans-serif;
 }
 
 /* サンクスページ */
-.contact_back02 {
+.thanks_back01 {
     position: absolute;
-    height: 500px;
-    top: 0;
-    left: 0;
+    width: 208px;
+    top: 100px;
+    left: 18%;
 }
-.contact_back02 img {
-    object-fit: cover;
-    width: 100%;
-    height: 1150px;
-    object-position: 100% 100%;
+.thanks_back02 {
+    position: absolute;
+    width: 191px;
+    top: 150px;
+    left: 68%;
+}
+.thanks_back03 {
+    display: none;
 }
 .thanks_p {
     text-align: center;
@@ -170,14 +187,28 @@ textarea:focus {
 }
 .thanks_p::before {
     content: "";
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgba(162, 215, 221, 0.8);
     position: absolute;
-    top: -60px;
+    top: -50px;
     left: -50px;
-    z-index: -1;
+    z-index: -10;
+    /* アニメーション */
+    animation: anim_v2 3s infinite ease-in-out alternate;
+}
+@keyframes anim_v2 {
+    0% {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgba(22, 94, 131, 0.5);
+        transform: translate(0, 0px);
+    }
+    100% {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgba(22, 94, 131, 0.5);
+        transform: translate(0, 8px);
+    }
 }
 .thanks_p::after {
     content: "";
@@ -192,9 +223,30 @@ textarea:focus {
 }
 
 /* レスポンシブ */
+@media screen and (max-width: 1366px) {
+    .thanks_back01 {
+        left: 15%;
+    }
+    .thanks_back02 {
+        left: 65%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .thanks_back01 {
+        display: none;
+    }
+    .thanks_back02 {
+        left: 65%;
+    }
+}
 @media screen and (max-width: 767px) {
     .contact_back01 img {
         object-position: 43% 100%;
+    }
+    .contact_p::before {
+        width: 100px;
+        height: 100px;
+        left: 200px;
     }
     h2 {
         font-size: 25px;
@@ -211,6 +263,16 @@ textarea:focus {
     }
     .contact_box_s + .contact_item {
         margin-top: 30px;
+    }
+    /* サンクス */
+    .thanks_back02 {
+        top: 150px;
+        left: 60%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .thanks_back02 {
+        left: 55%;
     }
 }
 @media screen and (max-width: 452px) {
@@ -247,5 +309,15 @@ textarea:focus {
         height: 80px;
         top: -45px;
         left: -40px;
+    }
+    .thanks_back02 {
+        display: none;
+    }
+    .thanks_back03 {
+        display: block;
+        position: absolute;
+        width: 92px;
+        top: 325px;
+        left: 65%;
     }
 }

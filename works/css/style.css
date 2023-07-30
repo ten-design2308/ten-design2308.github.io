@@ -49,7 +49,6 @@
     top: 0;
     left: 6%;
     height: 100%;
-    z-index: -1;
 }
 .pc_vertical {
     writing-mode: vertical-rl;
@@ -452,9 +451,6 @@ dd + dd {
     .works_list_top {
         margin-top: 0;
         margin-left: 10%;
-    }
-    .head_sticky {
-        z-index: 10;
     }
     .sticky_height_design,
     .sticky_height_art,
