@@ -459,6 +459,7 @@ dd + dd {
     }
     .pc_vertical {
         writing-mode: horizontal-tb;
+        z-index: 5;
     }
     .works_design_wrap,
     .works_art_wrap,
@@ -474,9 +475,6 @@ dd + dd {
     }
 
     /* それぞれのページ */
-    .pc_vertical {
-        writing-mode: horizontal-tb;
-    }
     .heading_each {
         position: relative;
         top: 165px;

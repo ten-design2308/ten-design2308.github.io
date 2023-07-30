@@ -591,19 +591,19 @@ h2 {
     }
     .top::after {
         top: 245px;
-        left: 87px;
+        left: 60px;
     }
     @keyframes anim_v2 {
         0% {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background-color: rgba(22, 94, 131, 0.6);
             transform: translate(0, 0px);
         }
         100% {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background-color: rgba(22, 94, 131, 0.6);
             transform: translate(0, 15px);
