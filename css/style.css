@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* ローディング */
-/* Loading背景画面設定　*/
+/* Loading背景画面設定*/
 #splash {
     /*fixedで全面に固定*/
     position: fixed;
@@ -34,22 +34,22 @@
     0% {
         stroke-dashoffset: 440px;
     }
-    20% {
+    15% {
         stroke-dashoffset: 0px;
     }
 
     /* 回転「て」 */
-    30% {
+    23% {
         transform-origin: 50% 50%;
         transform: rotate(0);
     }
-    50% {
+    43% {
         transform-origin: 50% 50%;
         transform: rotate(-495deg);
     }
 
     /* 回転「ん」 */
-    60% {
+    53% {
         transform-origin: 50% 50%;
         transform: rotate(-495deg);
     }
