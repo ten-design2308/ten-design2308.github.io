@@ -203,7 +203,7 @@ header {
 
 /* フッター */
 .footer_img {
-    vertical-align: top;
+    margin-bottom: -1px;
 }
 .footer_wrap {
     padding: 4%;

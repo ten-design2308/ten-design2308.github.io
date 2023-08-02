@@ -2,7 +2,7 @@
 
 /* ローディング */
 /* Loading背景画面設定*/
-#splash {
+.loading {
     /*fixedで全面に固定*/
     position: fixed;
     top: 0;
@@ -11,19 +11,29 @@
     height: 100%;
     z-index: 999;
     background: #a2d7dd;
-    /* text-align:center; */
+    /* opacity: 1;
+  visibility: visible; */
+}
+.loading.is-active {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* ロゴ */
-#loading_logo {
+.loading-animation {
     width: 140px;
-    padding: 20px;
-    /* object-fit: inline-block; */
     box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+    animation: logo_roll 6s;
+    opacity: 0;
+    visibility: hidden;
+}
+.loading-animation.is-active {
+    opacity: 1;
+    visibility: visible;
 }
 #rect1 {
     stroke-dasharray: 440px;
@@ -37,35 +47,40 @@
     15% {
         stroke-dashoffset: 0px;
     }
-
+}
+@keyframes logo_roll {
+    0% {
+        transform-origin: 50% 50%;
+        transform: translateY(-50%) translateX(-50%) rotate(0);
+    }
     /* 回転「て」 */
     23% {
         transform-origin: 50% 50%;
-        transform: rotate(0);
+        transform: translateY(-50%) translateX(-50%) rotate(0);
     }
     43% {
         transform-origin: 50% 50%;
-        transform: rotate(-495deg);
+        transform: translateY(-50%) translateX(-50%) rotate(-495deg);
     }
 
     /* 回転「ん」 */
     53% {
         transform-origin: 50% 50%;
-        transform: rotate(-495deg);
+        transform: translateY(-50%) translateX(-50%) rotate(-495deg);
     }
     80% {
         transform-origin: 50% 50%;
-        transform: rotate(180deg);
+        transform: translateY(-50%) translateX(-50%) rotate(180deg);
     }
 
     /* 回転「戻る」 */
     90% {
         transform-origin: 50% 50%;
-        transform: rotate(180deg);
+        transform: translateY(-50%) translateX(-50%) rotate(180deg);
     }
     100% {
         transform-origin: 50% 50%;
-        transform: rotate(0);
+        transform: translateY(-50%) translateX(-50%) rotate(0);
     }
 }
 
