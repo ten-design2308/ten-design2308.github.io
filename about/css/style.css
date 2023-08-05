@@ -9,11 +9,12 @@
     z-index: -10;
 }
 .about_backfull img {
+    opacity: 0.6;
     object-fit: contain;
     width: 100%;
-    height: 900px;
+    height: 950px;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
     .about_backfull img {
         object-fit: cover;
     }
@@ -95,6 +96,7 @@ h2 {
         max-width: 900px;
     }
     .about_back01 img {
+        opacity: 0.6;
         object-fit: cover;
         width: 100%;
         height: 250px;
@@ -105,6 +107,7 @@ h2 {
         position: relative;
     }
     .about_back02 {
+        opacity: 0.6;
         display: block;
         position: absolute;
         top: -59px;
@@ -114,7 +117,7 @@ h2 {
     .about_back02 img {
         object-fit: cover;
         width: 100%;
-        height: 750px;
+        height: 700px;
     }
 }
 @media screen and (max-width: 767px) {
