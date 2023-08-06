@@ -248,7 +248,7 @@
 }
 .work_top_img::before {
     content: url(../images/work_back01@2x.png);
-    opacity: 0.6;
+    opacity: 0.7;
     position: absolute;
     top: -100px;
     left: -80px;
@@ -257,7 +257,7 @@
 }
 .work_top_img::after {
     content: url(../images/work_back02@2x.png);
-    opacity: 0.4;
+    opacity: 0.6;
     position: absolute;
     overflow: hidden;
     object-fit: cover;
@@ -316,14 +316,22 @@
     width: 65%;
     padding-right: 4%;
 }
+h4 {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    /* padding-bottom: 8px; */
+    background: linear-gradient(transparent 70%, #d0ebee 30%);
+    margin-bottom: 8px;
+}
 .work_desc_point p {
     text-align: justify;
     font-size: 15px;
     line-height: 1.5;
     letter-spacing: 0.05em;
 }
-.work_desc_point p + p {
-    margin-top: 20px;
+.work_desc_point p + h4 {
+    margin-top: 25px;
 }
 .work_desc_category {
     padding-left: 4%;
