@@ -18,11 +18,11 @@
     width: 100%;
     height: 2840px;
 }
-/* @media screen and (max-width: 1550px) {
+@media screen and (max-width: 1550px) {
     .works_back01 img {
         object-fit: cover;
     }
-} */
+}
 @media screen and (max-width: 1366px) {
     .works_back01 {
         position: absolute;
@@ -82,18 +82,47 @@
 .works_list_top {
     margin-top: 300px;
     margin-left: 20%;
+    /* position: relative; */
 }
 .works_list_top li {
     font-size: 20px;
     font-feature-settings: "palt";
     letter-spacing: 0.1em;
+    width: fit-content;
     margin-top: 40px;
 }
-/* .works_list_top li a {
-    font-size: 20px;
-    font-feature-settings: "palt";
-    letter-spacing: 0.1em;
-} */
+.works_list_top li a {
+    display: block;
+    position: relative;
+}
+/* ホバーの定義 */
+.works_list_top li.current a,
+.works_list_top li a:hover {
+    color: #165e83;
+}
+
+.works_list_top li a::after {
+    content: "";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: #165e83;
+    /*アニメーションの指定*/
+    transition: all 0.3s;
+    transform: scale(0, 1); /*X方向0、Y方向1*/
+    transform-origin: left top; /*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+.works_list_top li.current a::after,
+.works_list_top li a:hover::after {
+    transform: scale(1, 1); /*X方向にスケール拡大*/
+}
 
 .works_list {
     width: 100%;
@@ -173,6 +202,7 @@
 /* トップへ戻る */
 .page_top {
     font-size: 14px;
+    color: #165e83;
     font-feature-settings: "palt";
     letter-spacing: 0.05em;
     position: fixed;
@@ -184,7 +214,7 @@
     display: block;
     position: absolute;
     top: -66px;
-    left: 5px;
+    left: 17px;
     width: 10px;
     height: 45px;
     border-top: solid 1px;
@@ -195,7 +225,7 @@
     display: block;
     position: absolute;
     top: -65px;
-    left: 8px;
+    left: 20px;
     width: 10px;
     height: 45px;
     border-right: solid 1px;
@@ -206,84 +236,65 @@
     position: absolute;
     top: 180px;
     left: 6%;
-    font-size: 25px;
+    font-size: 30px;
     letter-spacing: 0.05em;
-    z-index: -1;
-}
-.next {
-    text-align: center;
-    font-size: 15px;
-    font-feature-settings: "palt";
-}
-
-/*== 波紋がふわっと広がる */
-
-.btn_hover {
-    /*波紋の基点とするためrelativeを指定*/
-    position: relative;
-    /*リンクの形状*/
-    display: block;
-    width: fit-content;
-    margin: 0 auto 150px;
-    text-decoration: none;
-    color: #165e83;
-    outline: none;
-}
-
-/*波形の設定*/
-.btn_hover:hover::before {
-    content: "";
-    /*絶対配置で波形の位置を決める*/
-    position: absolute;
-    left: 50%;
-    top: -10%;
-    /*波形の形状*/
-    border: 3px solid #a2d7dd;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    /*はじめは不透明*/
-    opacity: 1;
-    /*アニメーションの設定*/
-    animation: 1s circleanime2 forwards;
-}
-
-/*波形が広がるアニメーション*/
-@keyframes circleanime2 {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-/*矢印の設定*/
-.btn_hover::after {
-    content: "";
-    /*絶対配置で矢印の位置を決める*/
-    position: absolute;
-    top: 4px;
-    right: -20px;
-    /*矢印の形状*/
-    width: 8px;
-    height: 8px;
-    border-top: 1px solid #165e83;
-    border-right: 1px solid #165e83;
-    transform: rotate(45deg);
+    z-index: 10;
 }
 
 .work_top_img {
     max-width: 80%;
     margin: 150px auto 72px;
+    position: relative;
+}
+.work_top_img::before {
+    content: url(../images/work_back01@2x.png);
+    opacity: 0.6;
+    position: absolute;
+    top: -100px;
+    left: -80px;
+    transform: scale(0.5);
+    z-index: 5;
+}
+.work_top_img::after {
+    content: url(../images/work_back02@2x.png);
+    opacity: 0.4;
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+    bottom: -100px;
+    right: -90px;
+    transform: scale(0.5);
+    z-index: 5;
 }
 .work_lead {
     text-align: center;
     font-size: 25px;
     font-feature-settings: "palt";
     letter-spacing: 0.05em;
-    margin-bottom: 90px;
+    line-height: 1.5;
+    width: fit-content;
+    margin: 0 auto 90px;
+    position: relative;
+}
+.work_lead::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #a2d7dd;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: -60px;
+}
+.work_lead::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #a2d7dd;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: -60px;
 }
 .br_pc_none {
     display: none;
@@ -341,6 +352,65 @@ dd {
 }
 dd + dd {
     margin-bottom: 24px;
+}
+
+.next {
+    text-align: center;
+    font-size: 15px;
+    font-feature-settings: "palt";
+}
+/*== 波紋がふわっと広がる */
+.btn_hover {
+    /*波紋の基点とするためrelativeを指定*/
+    position: relative;
+    /*リンクの形状*/
+    display: block;
+    width: fit-content;
+    margin: 0 auto 150px;
+    text-decoration: none;
+    color: #165e83;
+    outline: none;
+}
+/*波形の設定*/
+.btn_hover:hover::before {
+    content: "";
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    /*波形の形状*/
+    border: 3px solid #a2d7dd;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /*はじめは不透明*/
+    opacity: 1;
+    /*アニメーションの設定*/
+    animation: 1s circleanime2 forwards;
+}
+/*波形が広がるアニメーション*/
+@keyframes circleanime2 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+/*矢印の設定*/
+.btn_hover::after {
+    content: "";
+    /*絶対配置で矢印の位置を決める*/
+    position: absolute;
+    top: 4px;
+    right: -20px;
+    /*矢印の形状*/
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #165e83;
+    border-right: 1px solid #165e83;
+    transform: rotate(45deg);
 }
 
 /* レスポンシブ */
@@ -416,6 +486,17 @@ dd + dd {
     }
 
     /* それぞれのページ */
+    .heading_each {
+        font-size: 25px;
+    }
+    .work_lead::before {
+        top: 25px;
+        left: -40px;
+    }
+    .work_lead::after {
+        top: 25px;
+        right: -40px;
+    }
     .work_desc_wrap {
         display: block;
     }
@@ -486,13 +567,25 @@ dd + dd {
     /* それぞれのページ */
     .heading_each {
         position: relative;
-        top: 165px;
+        top: 140px;
+        left: 0;
         width: fit-content;
-        z-index: 50;
+        margin: 0 auto;
     }
     .work_top_img {
         max-width: 100%;
-        margin: 150px auto 50px;
+        margin: 130px auto 50px;
+    }
+    .work_top_img::after {
+        object-fit: cover;
+        width: 165px;
+        right: -41px;
+    }
+    .work_lead::before {
+        left: -30px;
+    }
+    .work_lead::after {
+        right: -30px;
     }
     .work_desc_wrap {
         padding-left: 10%;
