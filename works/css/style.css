@@ -327,11 +327,11 @@ h4 {
 .work_desc_point p {
     text-align: justify;
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: 0.05em;
 }
 .work_desc_point p + h4 {
-    margin-top: 25px;
+    margin-top: 60px;
 }
 .work_desc_category {
     padding-left: 4%;
