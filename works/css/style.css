@@ -244,6 +244,7 @@
 .work_top_img {
     max-width: 80%;
     margin: 150px auto 72px;
+    text-align: center;
     position: relative;
 }
 .work_top_img::before {
@@ -311,6 +312,7 @@
 .work_pc_only {
     width: 45%;
     margin: 120px auto;
+    text-align: center;
 }
 .work_desc_point {
     width: 65%;
