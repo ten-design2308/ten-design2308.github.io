@@ -238,7 +238,8 @@ header {
     padding-left: 30px;
     flex-shrink: 0;
 }
-.footer_insta_img > a > img .footer_img > img {
+.footer_insta_img > a > img,
+.footer_img > img {
     width: 100%;
 }
 .footer_logo {
