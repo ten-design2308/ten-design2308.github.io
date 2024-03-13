@@ -138,8 +138,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 1100px;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .works_design_wrap {
     margin: 200px auto 0;
@@ -152,7 +152,7 @@
 }
 .works_list_img {
     max-width: 1200px;
-    width: 47%;
+    width: 49%;
     margin-top: 50px;
     /* ホバー用 */
     position: relative;
@@ -324,16 +324,16 @@ h4 {
     letter-spacing: 0.05em;
     /* padding-bottom: 8px; */
     background: linear-gradient(transparent 70%, #d0ebee 30%);
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 }
 .work_desc_point p {
     text-align: justify;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 2;
     letter-spacing: 0.05em;
 }
 .work_desc_point p + h4 {
-    margin-top: 60px;
+    margin-top: 72px;
 }
 .work_desc_category {
     padding-left: 4%;
@@ -350,7 +350,7 @@ dt {
     /* 後続の左寄せを解除 */
     clear: left;
     margin-right: 0.5em;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
     width: 80px;
 }
 dd {
@@ -361,7 +361,7 @@ dd {
     margin-bottom: 8px;
 }
 dd + dd {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .next {
